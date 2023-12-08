@@ -19,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddTheaterRequest {
-    private String name;
+    private String theaterName;
     private String address;
     private City city;
     private Integer noOfClassicSeats;

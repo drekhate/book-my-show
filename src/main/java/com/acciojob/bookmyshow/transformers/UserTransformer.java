@@ -8,7 +8,7 @@ public class UserTransformer {
         User user = User.builder()
                 .age(addUserRequest.getAge())
                 .emailId(addUserRequest.getEmailId())
-                .name(addUserRequest.getName())
+                .userName(addUserRequest.getUserName())
                 .mobNo(addUserRequest.getMobNo())
                 .build();
         return user;

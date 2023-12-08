@@ -5,20 +5,23 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "theaterSeatsTable")
-@Builder
 @Getter
 @Setter
-public class TheaterSeat {
+@Table(name = "showSeatsTable")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class ShowSeat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer theaterSeatId;
+    private Integer showSeatId;
     private String seatNo;
     @Enumerated(value = EnumType.STRING)
     private SeatType seatType;
+    private Integer cost;
+    private Boolean isAvailable;
+    private Boolean isFoodAttached;
     @ManyToOne
     @JoinColumn
-    private Theater theater;
+    private Show show;
 }

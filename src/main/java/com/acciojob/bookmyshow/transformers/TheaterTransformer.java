@@ -6,7 +6,7 @@ import com.acciojob.bookmyshow.models.Theater;
 public class TheaterTransformer {
     public static Theater convertAddTheaterReqToTheater(AddTheaterRequest addTheaterRequest) {
         Theater theater = Theater.builder()
-                .name(addTheaterRequest.getName())
+                .theaterName(addTheaterRequest.getTheaterName())
                 .address(addTheaterRequest.getAddress())
                 .city(addTheaterRequest.getCity())
                 .build();

@@ -1,7 +1,8 @@
 package com.acciojob.bookmyshow.controllers;
 
-import com.acciojob.bookmyshow.dtos.AddTheaterRequest;
-import com.acciojob.bookmyshow.services.TheaterService;
+import com.acciojob.bookmyshow.dtos.BookTicketRequest;
+import com.acciojob.bookmyshow.repositorys.TicketRepository;
+import com.acciojob.bookmyshow.services.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/theater")
-public class TheaterController {
+@RequestMapping("/ticket")
+public class TicketController {
     @Autowired
-    private TheaterService theaterService;
-    @PostMapping("/addTheater")
-    public ResponseEntity addTheater(@RequestBody AddTheaterRequest addTheaterRequest) {
-        String result = theaterService.addTheater(addTheaterRequest);
+    private TicketService ticketService;
+    @PostMapping("/bookTicket")
+    public ResponseEntity bookTicket(@RequestBody BookTicketRequest bookTicketRequest) {
+        String result = ticketService.bookTicket(bookTicketRequest);
         return new ResponseEntity(result, HttpStatus.OK);
     }
 }
